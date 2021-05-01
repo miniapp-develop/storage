@@ -1,4 +1,4 @@
-import {storage} from '../../libs/index';
+import storage from '../../libs/index';
 
 Page({
     data: {},

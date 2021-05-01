@@ -1,10 +1,8 @@
-const vendor = require("@mini-dev/vendor");
-
-import wxx from "./wxx";
+const {vendor, ex} = require("@mini-dev/vendor");
 
 const storage = {
     get(key, defaultValue) {
-        return wxx('getStorage')({key}).then(ds => {
+        return ex('getStorage')({key}).then(ds => {
             if (!ds) {
                 return defaultValue;
             }
@@ -21,7 +19,7 @@ const storage = {
         return wrap.data || defaultValue;
     },
     getAll(includeValues) {
-        return wxx('getStorageInfo')().then(res => {
+        return ex('getStorageInfo')().then(res => {
             if (includeValues) {
                 res.entries = res.keys.map(key => {
                     return [key, this.getSync(key)];
@@ -40,7 +38,7 @@ const storage = {
         return res;
     },
     set(key, data) {
-        return wxx('setStorage')({key, data});
+        return ex('setStorage')({key, data});
     },
     setSync(key, data) {
         const wrap = {
@@ -50,14 +48,14 @@ const storage = {
         return this;
     },
     remove(key) {
-        return wxx('removeStorage')({key});
+        return ex('removeStorage')({key});
     },
     removeSync(key) {
         vendor.removeStorageSync(key);
         return this;
     },
     clear() {
-        return wxx('clearStorage')();
+        return ex('clearStorage')();
     },
     clearSync() {
         vendor.clearStorageSync();

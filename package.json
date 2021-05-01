@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/miniapp-develop/storage",
   "dependencies": {
-    "@mini-dev/vendor": "0.0.1"
+    "@mini-dev/vendor": "0.0.2"
   },
   "devDependencies": {},
   "keywords": [

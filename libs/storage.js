@@ -1,6 +1,6 @@
-import wxx from "./wxx";
-
 const vendor = require("@mini-dev/vendor");
+
+import wxx from "./wxx";
 
 const storage = {
     get(key, defaultValue) {
@@ -8,8 +8,8 @@ const storage = {
             if (!ds) {
                 return defaultValue;
             }
-            const data = JSON.parse(ds);
-            return data.data || defaultValue;
+            const wrap = JSON.parse(ds);
+            return wrap.data || defaultValue;
         });
     },
     getSync(key, defaultValue) {
@@ -17,8 +17,8 @@ const storage = {
         if (!ds) {
             return defaultValue;
         }
-        const data = JSON.parse(ds);
-        return data.data || defaultValue;
+        const wrap = JSON.parse(ds);
+        return wrap.data || defaultValue;
     },
     getAll(includeValues) {
         return wxx('getStorageInfo')().then(res => {

@@ -1,0 +1,3 @@
+<view>
+    <button bind:tap="onTapStorage">storage</button>
+</view>

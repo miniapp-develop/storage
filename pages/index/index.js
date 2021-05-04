@@ -1,4 +1,4 @@
-import storage from '../../libs/index';
+const storage = require('../../libs/index')
 
 Page({
     data: {},

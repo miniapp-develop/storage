@@ -1,3 +1,1 @@
-import storage from './storage';
-
-module.exports = storage;
+module.exports = require('./storage');
